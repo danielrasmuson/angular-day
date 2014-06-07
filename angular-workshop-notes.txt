@@ -35,3 +35,24 @@ var greetCary = myGreet('John'); // <-- Hello Cary and John
 FOUC = "flash of unstyled content" - refresh and you can quickly see the handlebars around firstName, as it loads the AngularJS library. So instead of "<h1>Hello {{firstName}}</h1>", you can do <h1>Hello <span ng-bind="firstName"></span></h1> to get rid of FOUC.
 
 two-way binding - the view has a hold of the variable, and the model has a hold of the variable. I can modify either, and it can modify the variable. Easiest way to do it. All in-memory. No back-end controller or anything like that. Typically separate the view, model, controller.
+
+MVC = model, view, controller
+
+Unit testing is a chore if:
+1) Tests are not readable
+2) Tests take extremely long
+AngularJS uses Jasmine for its unit testing
+
+Accessors vs. Dirty-checking in JavaScript frameworks
+http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks
+Other frameworks: accessors on wrapped objects, getters and setters
+AngularJS: dirty checking on plain old javascript objects (POJO), digest
+
+AngularJS directives look like attributes of tags
+
+
+
+
+
+
+
