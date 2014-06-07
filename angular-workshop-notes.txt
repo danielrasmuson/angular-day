@@ -1,0 +1,37 @@
+AngularJS Day 1
+
+
+Introduction:
+
+Back-end / server-side: .NET, Rails, Java, etc.
+
+In Angular, server-side logic is brought in the browser. Server-side scripting is 'demoted' in some way.
+
+
+JavaScript review:
+
+variable hoisting - in the browser, the variable is declared / instantiated first, then assigned. the developer should do the hoisting, don't let the compiler do the hoisting, that way you know what you're going to get
+
+closures - "outer closes over the inner". Function within the function and access to the top-level variables / parameters.
+
+function greeting (name) {
+	var name = 'Albert';
+	var hairColor = 'black';
+
+	return "hello " + name;
+};
+var greet = function (name) {
+	return function (also) {
+		return "Hello " + name + " and " + also;
+	}
+};
+var myGreet = greet('Cary'); // <-- a function
+var greetCary = myGreet('John'); // <-- Hello Cary and John
+
+
+AngularJS Markup:
+
+
+FOUC = "flash of unstyled content" - refresh and you can quickly see the handlebars around firstName, as it loads the AngularJS library. So instead of "<h1>Hello {{firstName}}</h1>", you can do <h1>Hello <span ng-bind="firstName"></span></h1> to get rid of FOUC.
+
+two-way binding - the view has a hold of the variable, and the model has a hold of the variable. I can modify either, and it can modify the variable. Easiest way to do it. All in-memory. No back-end controller or anything like that. Typically separate the view, model, controller.
