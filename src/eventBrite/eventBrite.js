@@ -45,9 +45,10 @@ angular.module('app')
                 when: when
             };
 
+            $scope.$broadcast('notify', event);
 
             $scope.events.push(event);
-            $log.debug($scope.events);
+            //$log.debug($scope.events);
         };
     });
 

@@ -1,13 +1,8 @@
 <div class="container">
 
-	<syntax>
-	  <ul>
-	    <li ng-repeat="name in names">
-	      {{name}}
-	    </li>
-	  </ul>
-	</syntax>
+	<div notifications></div>
 
+	<notifications></notifications>
 
 	<form name="form" novalidate ng-submit="form.$valid && addEvent(what, where, when)">
 		<label>What</label>

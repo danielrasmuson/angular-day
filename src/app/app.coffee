@@ -1,5 +1,6 @@
 class App extends App
 	@constructor = [
+		'ngAnimate'
 		'ngRoute'
 		# coffeelint: disable=coffeescript_error
 		<% if (useBackendless) { %>

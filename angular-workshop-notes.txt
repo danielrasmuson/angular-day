@@ -56,3 +56,34 @@ AngularJS directives look like attributes of tags
 
 
 
+
+AngularJS Day 2
+
+Types of custom directives:
+<notifications>Hello World</notifications> will not show in IE8 or lower
+<app:notifications></app:notifications> works with IE8 or lower
+
+EAC - element, attribute, class <-- how you want consumers to use the directive
+<notifications></notifications> is a element-based directive
+<div class=notifications></div> is a class-based directive
+<div notifications></div> is block-level, attribute-based directive
+<span notifications></span> is inline directive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

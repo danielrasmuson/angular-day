@@ -3,6 +3,8 @@ APP_NAME = 'app'
 BOWER_COMPONENTS =
 	'angular': '1.2.16':
 		scripts: 'angular.min.js'
+	'angular-animate': '1.2.16':
+		scripts: 'angular-animate.min.js'
 	'angular-mocks': '1.2.16':
 		scripts: 'angular-mocks.js'
 	'angular-route': '1.2.16':
@@ -23,6 +25,7 @@ BOWER_COMPONENTS =
 SCRIPTS = [
 	'**/angular.min.js'
 	'**/angular-mocks.js'
+	'**/angular-animate.min.js'
 	'**/angular-route.min.js'
 	'**/app.js'
 	'**/*.js'
