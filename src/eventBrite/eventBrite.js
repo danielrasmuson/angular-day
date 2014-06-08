@@ -1,14 +1,25 @@
 angular.module('app')
-	.filter('truncate', function() {
-		return function(text, characters, includeEllipsis) {
-			return text.substr(0, characters) + (includeEllipsis ? '...':'');
-		};
-	});
+    .filter('truncate', function() {
+        return function(text, characters, includeEllipsis) {
+            return text.substr(0, characters) + (includeEllipsis ? '...':'');
+        };
+    });
 
 angular.module('app')
-    .controller('eventBriteController', function($scope, $log) {
-        $scope.greeting = "Hello Angularians";
+.service('eventBriteService', function ($http, $log) {
+    // get all events
+    this.list = function () {
+        return $http.get('http://workshop-api-1.herokuapp.com/events.json')
+        .then(function (result) {
+            return result.data;
+        });
+    };
+});
 
+angular.module('app')
+    .controller('eventBriteController', function ($scope, $log, eventBriteService) {
+        $scope.greeting = "Hello Angularians";
+        
         var Guid = function() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
                 function(c) {
@@ -20,23 +31,12 @@ angular.module('app')
             );
         };
 
+        eventBriteService.list().then(function (result) {
+            $scope.events = result;
 
-        $scope.events = [{
-            id: Guid(),
-            what: 'Ruby Conf',
-            where: 'San Diego',
-            when: 'October'
-        }, {
-            id: Guid(),
-            what: 'Rails Conf',
-            where: 'Chicago',
-            when: 'April'
-        }, {
-            id: Guid(),
-            what: 'ngConf',
-            where: 'San Francisco',
-            when: 'January'
-        }];
+            return result;
+        });
+
         $scope.addEvent = function(what, where, when) {
             var event = {
                 id: Guid(),

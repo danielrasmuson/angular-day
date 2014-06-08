@@ -61,13 +61,32 @@ AngularJS Day 2
 
 Types of custom directives:
 <notifications>Hello World</notifications> will not show in IE8 or lower
-<app:notifications></app:notifications> works with IE8 or lower
+<app:notifications></app:notifications> works with IE8 or lower (namespace)
 
 EAC - element, attribute, class <-- how you want consumers to use the directive
 <notifications></notifications> is a element-based directive
 <div class=notifications></div> is a class-based directive
 <div notifications></div> is block-level, attribute-based directive
 <span notifications></span> is inline directive
+
+AngularJS directives using isolated scope with attributes
+1. Text Binding (prefix: @)
+2. One-Way Binding (prefix: &)
+3. Two-Way Binding (prefix: =)
+http://umur.io/angularjs-directives-using-isolated-scope-with-attributes/
+
+Remote Services:
+HTTP and GET
+Promises, chaining promises
+Don't break the promise!
+https://egghead.io/lessons/angularjs-chained-promises
+Request/response interceptors
+Get to know promises, front-end community is starting to use it a bunch
+
+
+
+
+
 
 
 
