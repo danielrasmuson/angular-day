@@ -83,7 +83,10 @@ https://egghead.io/lessons/angularjs-chained-promises
 Request/response interceptors
 Get to know promises, front-end community is starting to use it a bunch
 
-
+CORS and CSRF
+CORS = Cross-Origin Resource Sharing
+CSRF = Cross-Site Request Forgery
+OWASP Top 10 <-- for security and authentication
 
 
 

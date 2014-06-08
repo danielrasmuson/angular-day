@@ -14,6 +14,21 @@ angular.module('app')
             return result.data;
         });
     };
+
+    // get one event
+    this.get = function (id) {
+        return $http.get('http://workshop-api-1.herokuapp.com/events/' + id + '.json')
+        .then(function (result) {
+            return result.data;
+        });
+    };
+
+    this.delete = function (id) {
+        return $http.delete('http://workshop-api-1.herokuapp.com/events/' + id + '.json')
+        .then(function (result) {
+            return result.data;
+        });
+    };
 });
 
 angular.module('app')
@@ -54,9 +69,14 @@ angular.module('app')
 
 angular.module('app')
     .config(function($routeProvider) {
-        $routeProvider.when('/event-brite', {
+        $routeProvider
+        .when('/event-brite', {
             caption: 'Event Brite',
             controller: 'eventBriteController',
             templateUrl: '/eventBrite/eventBrite.html'
         })
+        .when('/event-brite/:id', {
+            controller: 'eventBriteEventController',
+            templateUrl: '/eventBrite/eventBriteEvent.html'
+        });
     });
